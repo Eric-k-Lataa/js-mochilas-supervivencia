@@ -1,38 +1,40 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.tiulo1 {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  gap: 50px;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+.titulo2 {
+  font-family: 'Tagesschrift';
+  border: 2px  blueviolet;
+  background: transparent;
+  color:blueviolet;
+  font-size: 40px;
+
 }
-a:hover {
-  color: #535bf2;
+
+h1 {
+  
+  font-size: 28px;
+}
+
+h2 {
+  font-family: 'Cascadia Mono';
+  font-size: 20px;
 }
 
 body {
   margin: 0;
-  display: flex;
+  display:grid;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  background-image: url("../public/assets/extras/01-bosque.jpg");
+  background-size: 1500px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #app {
@@ -42,55 +44,83 @@ h1 {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
 button {
+  font-family: 'Tagesschrift';
+  gap: 15px;
+  padding: 5px 15px;
+  border: 2px dotted blueviolet;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: transparent;
+  color: blueviolet;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: background-color 0.3s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:hover {
+  background-color: blueviolet;
+  color: white;
 }
+
+.btn-play {
+  flex-direction: column;
+}
+
+.btn-extra {
+  flex-direction: row;
+}
+
+.btn-start {
+  color: black;
+  background: #f9f9f9a0;
+  border: white;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+
+.more-options {
+  text-align: center;
+  display: block;
+  position: fixed;       /* o absolute si quieres que se mueva con el contenido */
+  width: 250px;
+  height: 500px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 14px;
+  color: white;
+  background-color: transparent;
+}
+.btn-return {
+  border: 2px dotted white;
+  color: white;
+}
+
+.book {
+  display: flex;
+  width: 450px;
+  height: 350px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f9f9f9a0; 
+}
+
+.page {
+  width: 50%;
+  padding: 30px;
+  font-family: 'Tagesschrift', serif;
+  font-size: 18px;
+}
+
+.left {
+  border-right: 1px solid #aaa; /* línea del "doblez" del libro */
+}
+
+.right {
+  border-left: 1px solid #aaa;
+}
+

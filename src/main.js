@@ -1,28 +1,25 @@
 import _ from 'underscore';
 
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+
+const btnPlay = document.getElementById("btnPlay");
+if (btnPlay) {
+  btnPlay.addEventListener("click", function () {
+    window.location.href = "story.html"; //te lleva a la pantalla de la historia
+  });
+}
 
 
+const btnReturn = document.getElementById("btnReturn");
+if (btnReturn) {
+  btnReturn.addEventListener("click", function () {
+    history.back(); // Regresa a la página anterior
+  });
+}
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
-
-setupCounter(document.querySelector('#counter'))
+const btnStart = document.getElementById("btnStart");
+if (btnStart) {
+  btnStart.addEventListener("click", function () {
+    window.location.href = "game.html";
+  });
+}
