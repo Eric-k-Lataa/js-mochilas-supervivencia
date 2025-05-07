@@ -11,7 +11,7 @@ export function distributeItems(numBackpacks, itemsList, BackpacksWeights) {
     let optimizeBackpacks = new Array(numBackpacks);
     let backpack;
     for( let i = 0; i < numBackpacks; i++ ) {
-        backpack = optimizeBackpack("inicio", 0, ["inicio"], 0, BackpacksWeights[i], prohibitedItems);
+        backpack = optimizeBackpack("start", 0, ["start"], 0, BackpacksWeights[i], prohibitedItems);
 
         optimizeBackpacks[i] = backpack;
         console.log(`backpack ${i}: `, backpack);

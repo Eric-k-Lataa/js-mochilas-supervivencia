@@ -9,40 +9,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
   </head>
+  <div class="more-options">
+    <h2>More options:</h2>
+    <br>
+    <button id="btnReturn" class="btn-return">
+        <i class="fas fa-arrow-left"></i> Return
+    </button>
+
+</div>
   <body>
-    <div class="titulo1">
+    <div class="titulo3">
       <h1>
         Here are your results!
       </h1>
+      <hr>
     </div>
+    
+    <div id="resultados"></div>
 
-    <table border="1">
-        <tr>
-            <th>Backpack</th>
-            <th>Objets</th>
-            <th>Weight</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Knife</td>
-            <td>300 grams</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Equipo B</td>
-            <td>27</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Equipo C</td>
-            <td>25</td>
-        </tr>
-    </table>
+    <button id="showOptimization">Show 100% Optimization</button>
+    <audio id="optimizationAudio" src="./public/assets/audios/03-so-you-are-curious.m4a"></audio>
+
+    <div id="optimizedResults" class="optimized-results"></div>
+    <audio id="hideAudio" src="./public/assets/audios/04-what-are-you-trying.m4a"></audio>
     
 
     <div id="app"></div>
     
     <script type="module" src="/src/main.js"></script>
+    <script src="./src/survival-backpack/usecases/app-buttons.js"></script>
 
   </body>
 </html>
