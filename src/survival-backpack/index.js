@@ -3,8 +3,6 @@ import { optimizeBackpack, createGraph, subtractObjects, createObjectList, gener
 
 const numBackpacks = 3;
 const itemsList = createObjectList().objectList;
-console.log("Valor de itemsList:", itemsList);
-console.log("Tipo de itemsList:", typeof itemsList);
 const backpacksWeights = [5000, 5000, 5000];
 
 const { optimizeBackpacks } = distributeItems(numBackpacks,itemsList,backpacksWeights);

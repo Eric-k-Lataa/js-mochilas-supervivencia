@@ -7,34 +7,40 @@ export const createGraph = () => {
     // Estructura para 6 etapas
     const etapas = [
         {  // Etapa 0: origen
-            "inicio": ["0-Linterna", "1-Linterna", "2-Linterna", "3-Linterna"]
+            "inicio": ["0-Botiquin", "1-Botiquin", "2-Botiquin", "3-Botiquin"]
             //"inicio": ["0-Casa", "1-Casa", "2-Casa", "3-Casa"]
         },
         {  // Etapa 1
+            "0-Botiquin": ["0-Linterna", "1-Linterna", "2-Linterna", "3-Linterna"],
+            "1-Botiquin": ["0-Linterna", "1-Linterna", "2-Linterna", "3-Linterna"],
+            "2-Botiquin": ["0-Linterna", "1-Linterna", "2-Linterna", "3-Linterna"],
+            "3-Botiquin": ["0-Linterna", "1-Linterna", "2-Linterna", "3-Linterna"],
+        }, 
+        {  // Etapa 2
             "0-Linterna": ["0-Sarten", "1-Sarten", "2-Sarten", "3-Sarten"],
             "1-Linterna": ["0-Sarten", "1-Sarten", "2-Sarten", "3-Sarten"],
             "2-Linterna": ["0-Sarten", "1-Sarten", "2-Sarten", "3-Sarten"],
             "3-Linterna": ["0-Sarten", "1-Sarten", "2-Sarten", "3-Sarten"]
         },
-        {  // Etapa 2
+        {  // Etapa 3
             "0-Sarten": ["0-Navaja", "1-Navaja", "2-Navaja", "3-Navaja"],
             "1-Sarten": ["0-Navaja", "1-Navaja", "2-Navaja", "3-Navaja"],
             "2-Sarten": ["0-Navaja", "1-Navaja", "2-Navaja", "3-Navaja"],
             "3-Sarten": ["0-Navaja", "1-Navaja", "2-Navaja", "3-Navaja"]
         },
-        {  // Etapa 3
+        {  // Etapa 4
             "0-Navaja": ["0-Ropa", "1-Ropa", "2-Ropa", "3-Ropa"],
             "1-Navaja": ["0-Ropa", "1-Ropa", "2-Ropa", "3-Ropa"],
             "2-Navaja": ["0-Ropa", "1-Ropa", "2-Ropa", "3-Ropa"],
             "3-Navaja": ["0-Ropa", "1-Ropa", "2-Ropa", "3-Ropa"]
         },
-        {  // Etapa 4
+        {  // Etapa 5
             "0-Ropa": ["0-Bolsa", "1-Bolsa", "2-Bolsa", "3-Bolsa"],
             "1-Ropa": ["0-Bolsa", "1-Bolsa", "2-Bolsa", "3-Bolsa"],
             "2-Ropa": ["0-Bolsa", "1-Bolsa", "2-Bolsa", "3-Bolsa"],
             "3-Ropa": ["0-Bolsa", "1-Bolsa", "2-Bolsa", "3-Bolsa"]
         },
-        {  // Etapa 5: último salto
+        {  // Etapa 6: último salto
             "0-Bolsa": ["0-Casa", "1-Casa", "2-Casa", "3-Casa"],
             "1-Bolsa": ["0-Casa", "1-Casa", "2-Casa", "3-Casa"],
             "2-Bolsa": ["0-Casa", "1-Casa", "2-Casa", "3-Casa"],
@@ -44,10 +50,30 @@ export const createGraph = () => {
 
     // Distancias entre ciudades
     const distancias = new Map([
-        ["inicio,0-Linterna", 0],
-        ["inicio,1-Linterna", 120],
-        ["inicio,2-Linterna", 240],
-        ["inicio,3-Linterna", 360],
+        ["inicio,0-Botiquin", 0],
+        ["inicio,1-Botiquin", 200],
+        ["inicio,2-Botiquin", 400],
+        ["inicio,3-Botiquin", 600],
+
+        ["0-Botiquin,0-Linterna", 0],
+        ["0-Botiquin,1-Linterna", 120],
+        ["0-Botiquin,2-Linterna", 240],
+        ["0-Botiquin,3-Linterna", 360],
+
+        ["1-Botiquin,0-Linterna", 0],
+        ["1-Botiquin,1-Linterna", 120],
+        ["1-Botiquin,2-Linterna", 240],
+        ["1-Botiquin,3-Linterna", 360],
+
+        ["2-Botiquin,0-Linterna", 0],
+        ["2-Botiquin,1-Linterna", 120],
+        ["2-Botiquin,2-Linterna", 240],
+        ["2-Botiquin,3-Linterna", 360],
+
+        ["3-Botiquin,0-Linterna", 0],
+        ["3-Botiquin,1-Linterna", 120],
+        ["3-Botiquin,2-Linterna", 240],
+        ["3-Botiquin,3-Linterna", 360],
 
         ["0-Linterna,0-Sarten", 0],
         ["0-Linterna,1-Sarten", 300],
