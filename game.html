@@ -8,65 +8,69 @@
   <link rel="stylesheet" href="/src/css/game.css">
 </head>
 <body>
-  <audio controls autoplay loop>
+  <audio controls autoplay loop hidden>
     <source src="./public/assets/audios/Splitting-the-Fields-Jon-Björk.MP3" type="audio/mp3">
-</audio>
+  </audio>
   <div class="container-fluid">
     <div class="row">
       <!-- Columna izquierda -->
       <div class="col-md-6 box p-3">
         <div id="app" class="p-3 text-white text-center rounded">
           <h2>Backpack 1</h2>
-          <div class="mt-40 bg-panel p-5" style="min-height: 400px;">
-            [Contenido de la mochila]
-          </div>
+
+           <!-- Área de la mochila -->
+        <div class="mt-40 bg-panel p-5" style="min-height: 400px;">
+          <h5>Backpack contents:</h5>
+          <div id="mochilaContenido" class="text-start"></div> <!-- Aquí irán los objetos -->
+        </div>
+          
           <div class="d-flex justify-content-between mt-4 bg-panel p-2 rounded">
-            <div>0 grams</div>
+            <div id="pesoTotal">0 gramos</div>
             <button class="btn btn-primary">Finish</button>
-          </div>
+          </div>          
         </div>
       </div>
 
       <!-- Columna derecha -->
-      <div class="col-md-6 box">
+      <div class="col-md-6 p-3 box">
         <!-- Grid de objetos -->
-        <div class="row text-center mb-4">
-          <div class="col-2 box"><img src="/public/assets/extras/08-botiquin.png" alt="Botiquin" class="img-fluid"></div>
-          <div class="col-2 box"><img src="/public/assets/extras/06-linterna.png" alt="Linterna" class="img-fluid"></div>
-          <div class="col-2 box"><img src="/public/assets/extras/07-sarten.png" alt="Sarten" class="img-fluid"></div>
-          <div class="col-2 box"><img src="/public/assets/extras/05-navaja.png" alt="navaja" class="img-fluid"></div>
-          <div class="col-2 box"><img src="/public/assets/extras/04-ropa.png" alt="Ropa" class="img-fluid"></div>
-          <div class="col-2 box"><img src="/public/assets/extras/09-bolsa.png" alt="Bolsa" class="img-fluid"></div>
+        <div class="d-flex flex-wrap justify-content-start">
+          <div class="col-2 box"><img src="/public/assets/extras/08-botiquin.png" class="objeto" data-nombre="botiquin" data-peso="200" alt="Botiquin"></div>
+          <div class="col-2 box"><img src="/public/assets/extras/06-linterna.png" class="objeto" data-nombre="linterna" data-peso="120" alt="Linterna"></div>
+          <div class="col-2 box"><img src="/public/assets/extras/07-sarten.png" class="objeto" data-nombre="Sarten" data-peso="300" alt="Sarten"></div>
+          <div class="col-2 box"><img src="/public/assets/extras/05-navaja.png" class="objeto" data-nombre="navaja" data-peso="30" alt="navaja"></div>
+          <div class="col-2 box"><img src="/public/assets/extras/04-ropa.png" class="objeto" data-nombre="Ropa" data-peso="750" alt="Ropa" ></div>
+          <div class="col-2 box"><img src="/public/assets/extras/09-bolsa.png" class="objeto" data-nombre="Bolsa" data-peso="600" alt="Bolsa"></div>
 
-          <div class="col-2 box"><img src="/public/assets/extras/08-botiquin.png" alt="Botiquin" class="img-fluid"></div>
-          <div class="col-2 box"><img src="/public/assets/extras/06-linterna.png" alt="Linterna" class="img-fluid"></div>
-          <div class="col-2 box"><img src="/public/assets/extras/07-sarten.png" alt="Sarten" class="img-fluid"></div>
-          <div class="col-2 box"><img src="/public/assets/extras/05-navaja.png" alt="navaja" class="img-fluid"></div>
-          <div class="col-2 box"><img src="/public/assets/extras/04-ropa.png" alt="Ropa" class="img-fluid"></div>
-          <div class="col-2 box"><img src="/public/assets/extras/09-bolsa.png" alt="Bolsa" class="img-fluid"></div>
+          <div class="col-2 box"><img src="/public/assets/extras/08-botiquin.png" class="objeto" data-nombre="botiquin" data-peso="200" alt="Botiquin"></div>
+          <div class="col-2 box"><img src="/public/assets/extras/06-linterna.png" class="objeto" data-nombre="linterna" data-peso="120" alt="Linterna"></div>
+          <div class="col-2 box"><img src="/public/assets/extras/07-sarten.png" class="objeto" data-nombre="Sarten" data-peso="300" alt="Sarten"></div>
+          <div class="col-2 box"><img src="/public/assets/extras/05-navaja.png" class="objeto" data-nombre="navaja" data-peso="30" alt="navaja"></div>
+          <div class="col-2 box"><img src="/public/assets/extras/04-ropa.png" class="objeto" data-nombre="Ropa" data-peso="750" alt="Ropa" ></div>
+          <div class="col-2 box"><img src="/public/assets/extras/09-bolsa.png" class="objeto" data-nombre="Bolsa" data-peso="600" alt="Bolsa"></div>
 
-          <div class="col-2 box"><img src="/public/assets/extras/08-botiquin.png" alt="Botiquin" class="img-fluid"></div>
-          <div class="col-2 box"><img src="/public/assets/extras/06-linterna.png" alt="Linterna" class="img-fluid"></div>
-          <div class="col-2 box"><img src="/public/assets/extras/07-sarten.png" alt="Sarten" class="img-fluid"></div>
-          <div class="col-2 box"><img src="/public/assets/extras/05-navaja.png" alt="navaja" class="img-fluid"></div>
-          <div class="col-2 box"><img src="/public/assets/extras/04-ropa.png" alt="Ropa" class="img-fluid"></div>
-          <div class="col-2 box"><img src="/public/assets/extras/09-bolsa.png" alt="Bolsa" class="img-fluid"></div>
+          <div class="col-2 box"><img src="/public/assets/extras/08-botiquin.png" class="objeto" data-nombre="botiquin" data-peso="200" alt="Botiquin"></div>
+          <div class="col-2 box"><img src="/public/assets/extras/06-linterna.png" class="objeto" data-nombre="linterna" data-peso="120" alt="Linterna"></div>
+          <div class="col-2 box"><img src="/public/assets/extras/07-sarten.png" class="objeto" data-nombre="Sarten" data-peso="300" alt="Sarten"></div>
+          <div class="col-2 box"><img src="/public/assets/extras/05-navaja.png" class="objeto" data-nombre="navaja" data-peso="30" alt="navaja"></div>
+          <div class="col-2 box"><img src="/public/assets/extras/04-ropa.png" class="objeto" data-nombre="Ropa" data-peso="750" alt="Ropa" ></div>
+          <div class="col-2 box"><img src="/public/assets/extras/09-bolsa.png" class="objeto" data-nombre="Bolsa" data-peso="600" alt="Bolsa"></div>
         </div>
 
         <!-- Sección de casas -->
         <div class="text-center box p-2">
           <h5>How many tents will you bring?</h5>
           <div class="d-flex justify-content-around mt-3">
-            <img src="/public/assets/extras/03-casa.png" alt="Casa 1" class="img-fluid">
-            <img src="/public/assets/extras/03-casa.png" alt="Casa 1" class="img-fluid">
-            <img src="/public/assets/extras/03-casa.png" alt="Casa 1" class="img-fluid">
+            <img src="/public/assets/extras/03-casa.png" class="objeto" data-nombre="casa" data-peso="3000" alt="Casa 1">
+            <img src="/public/assets/extras/03-casa.png" class="objeto" data-nombre="casa" data-peso="3000" alt="Casa 1">
+            <img src="/public/assets/extras/03-casa.png" class="objeto" data-nombre="casa" data-peso="3000" alt="Casa 1">
           </div>
           <button class="btn btn-primary mt-3">Change Object</button>
         </div>
       </div>
     </div>
   </div>
-
-  <script src="js/script.js"></script>
+  
+  <script src="/src/js/game.js"></script>
 </body>
 </html>
