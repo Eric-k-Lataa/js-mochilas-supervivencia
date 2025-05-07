@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: url("/public/assets/extras/02-fondo.png");
+    background-size: 1500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: sans-serif;
+  }
+  
+  .box {
+    border: 1px solid red; /* Solo para guiar la maqueta */
+    min-height: 100px;
+  }
+  
+  .bg-panel {
+    background-color: rgb(14, 77, 145);
+    border-radius: 10px;
+    color: white;
+  }
+  
+  #app {
+    background-color: rgb(6, 55, 128);
+    border-radius: 10px;
+    min-height: 600px;
+  }
+  .box img {
+    width: 100%;
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
+  }
+  
