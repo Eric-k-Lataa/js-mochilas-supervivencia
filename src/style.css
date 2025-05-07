@@ -191,4 +191,100 @@ button:hover {
   text-align: center;
 }
 
+/*Lo de Game*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*body {
+  background-image: url("/public/assets/extras/02-fondo.png");
+  background-size: 1500px;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: sans-serif;
+}*/
+
+.box {
+  border: 1px solid rgb(39, 39, 181); /* Solo para guiar la maqueta */
+  min-height: 80px;
+}
+
+.bg-panel {
+  background-color: rgb(14, 77, 145);
+  border-radius: 10px;
+  color: white;
+  width: 80%; /* Ajusta el tamaño a un porcentaje de la pantalla */
+  padding: 5px; /* Reduce el espacio interno */
+  margin: 30px auto;
+}
+
+/*#app {
+  background-color: rgb(6, 55, 128);
+  border-radius: 10px;
+  min-height: 600px;
+  width: 90%;
+  max-width: 1000px;
+}*/
+
+.box img {
+  width: 100%;
+  height: auto;
+  max-height: 60px;
+  object-fit:scale-down;
+}
+
+.objeto {
+  width: 80px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.objeto:hover {
+  transform: scale(1.1);
+}
+
+#mochilaContenido p {
+  margin: 0;
+  padding: 5px;
+  border-bottom: 1px solid white;
+}
+
+/*Lo puso Erick*/
+.container-fluid {
+  max-width: 900px; /* Limita el ancho */
+  max-height: 300px;
+  margin: auto; /* Centra el contenido */
+}
+
+.background-container {
+  position: relative; /* Define el contenedor como referencia */
+  width: 100%;
+  height: 100vh; /* Ajusta según la pantalla */
+  background-image: url('/ruta/a-tu-background.jpg'); /* Imagen de fondo */
+  background-size: cover;
+}
+
+.overlay-image {
+  position: fixed; /* Se mantiene fija en la pantalla */
+  top: 10px;
+  left: 261px;
+  width: 145vh; /* Ocupa todo el ancho */
+  height: 100vh; /* Ocupa toda la altura */
+  z-index: -1; /* Envía la imagen al fondo */
+  opacity: .0; /* Opcional: hacerla semi-transparente */
+}
+
+.d-flex.align-items-center {
+  display: flex;
+  align-items: center;
+  min-height: 100vh; /* Asegura que el contenedor tenga altura */
+}
+
+
 

@@ -1,4 +1,3 @@
- 
  const btnPlay = document.getElementById("btnPlay");
  const miAudio = document.getElementById("miAudio");
  const fadeOverlay = document.getElementById("fade-out-overlay");
@@ -113,3 +112,74 @@ function mostrarOptimización() {
       contenedor.appendChild(div);
   });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  inicializarMochila(); // Llamada a la función
+});
+
+function inicializarMochila() {
+  const objetos = document.querySelectorAll(".objeto");
+  const mochila = document.getElementById("mochilaContenido");
+  const pesoDiv = document.getElementById("pesoTotal");
+
+  let pesoTotal = 0;
+  let listaItems = ["0-Tent", "0-Sleeping_bag", "0-Clothes", "0-Swiss_Army_knife", "0-Frying_pan", "0-Flashlight", "0-First_aid_kit"];
+  let listNewItems=[];
+  const pesoMaximo = 5000; // Límite de peso
+
+  objetos.forEach(obj => {
+      obj.addEventListener("click", () => {
+          const nombre = obj.dataset.nombre;
+          const peso = parseInt(obj.dataset.peso);
+
+          listNewItems.push(nombre);
+          listaItems = addObjects(listNewItems,listaItems);
+          console.log("Items: ",listaItems);
+
+          if (pesoTotal + peso > pesoMaximo) {
+              alert("¡Has superado el límite de peso de la mochila!");
+              return;
+          }
+
+          // Ocultar el objeto original
+          obj.style.visibility = "hidden";
+
+          // Clonar y mostrar en la mochila
+          const imagenClonada = obj.cloneNode(true);
+          imagenClonada.style.width = "50px";
+          imagenClonada.style.margin = "5px";
+          imagenClonada.style.visibility = "visible"; // Asegura que el clon sea visible
+          mochila.appendChild(imagenClonada);
+
+          pesoTotal += peso;
+          pesoDiv.textContent = `${pesoTotal} gramos`;
+      });
+  });
+}
+
+
+//Lo que quería con esto era que cada vez que dieras clic a un objeto se sumara a un arreglo, no me salió
+function addObjects(lista1, lista2) {
+  let resultado = [...lista1]; // Clonar lista1 para modificar sin afectar el original
+
+  lista2.forEach(extra => {
+      const [numExtra, nombreExtra] = extra.split("-");
+
+      // 🔹 Buscar el objeto exacto dentro de la lista
+      const index = resultado.findIndex(obj => obj.split("-")[1] === nombreExtra);
+
+      if (index !== -1) {
+          // Si existe en la lista, actualizar la cantidad sin duplicarlo
+          const [numLista, nombreLista] = resultado[index].split("-");
+          resultado[index] = `${parseInt(numLista) + parseInt(numExtra)}-${nombreLista}`;
+      } else {
+          // Si no existe, agregarlo a la lista
+          resultado.push(extra);
+      }
+  });
+
+  return resultado; // Retornar lista única con cantidades actualizadas
+}
+
+
+
