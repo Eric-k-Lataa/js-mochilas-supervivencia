@@ -15,9 +15,3 @@ const userBackpacks = [
   { pesoTotal: 2250, ruta: ["2-Sleeping_bag", "1-Frying_pan", "1-Clothes"] },
   { pesoTotal: 4500, ruta: ["3-Clothes", "2-Swiss_Army_knife", "0-Tent"] }
 ];
-
-
-
-
-
-

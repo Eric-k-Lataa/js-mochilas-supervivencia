@@ -50,9 +50,9 @@ export const createGraph = () => {
     // Distancias entre ciudades
     const distancias = new Map([
         ["start,0-First_aid_kit", 0],
-        ["start,1-First_aid_kit", 200],
-        ["start,2-First_aid_kit", 400],
-        ["start,3-First_aid_kit", 600],
+        ["start,1-First_aid_kit", 180],
+        ["start,2-First_aid_kit", 360],
+        ["start,3-First_aid_kit", 440],
 
         ["0-First_aid_kit,0-Flashlight", 0],
         ["0-First_aid_kit,1-Flashlight", 120],
