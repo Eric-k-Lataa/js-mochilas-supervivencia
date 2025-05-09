@@ -6,8 +6,10 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: "index.html",
-        story: "./story.html", // Agrega cada HTML extra
+        story: "./story.html",
         game: "./game.html",
+        results: "./results.html",
+        credits: "./credits.html",
       },
     },
   },
